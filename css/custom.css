@@ -1,5 +1,9 @@
 .panel-heading {
-  font-size: 1.3em;
+  font-size: 1.4em;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  padding-right: 10px;
 }
 
 .panel-footer {
