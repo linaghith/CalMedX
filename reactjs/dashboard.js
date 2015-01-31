@@ -1,4 +1,7 @@
 var CMDashboard = React.createClass({
+
+  data: DATA,
+
   render: function() {
 
     var wrapperStyle = {
@@ -8,11 +11,17 @@ var CMDashboard = React.createClass({
     return (
 
       <div id="page-wrapper" style={wrapperStyle}>
+
         <div className="row">
             <div className="col-lg-12">
                 <h1 className="page-header">Dashboard</h1>
             </div>
         </div>
+
+        <div className="row">
+            <div className="col-lg-3 col-md-6"> <CBMedications medications={this.data.medications} /> </div>
+        </div>
+
       </div>
 
     );
