@@ -14,7 +14,7 @@ var CMDashboard = React.createClass({
 
         <div className="row">
             <div className="col-lg-12">
-                <h1 className="page-header">Dashboard</h1>
+                <h1 className="page-header">Marla Dixon</h1>
             </div>
         </div>
 
