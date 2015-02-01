@@ -1,22 +1,17 @@
 ## CalMedX
----
 A team project for CS6440: Developing an intuitive EHR dashboard with better workflow to improve physicians' productivity.
 
 ## DEMO
----
 [http://calmedx.khoitran.me/](http://calmedx.khoitran.me/)
 
 ## FEATURES
----
 The site is still under active development.
 
 ## INSTALL
----
 * Git clone or download and unzip.
 * Open index.html and you are good to go.
 
 ## DEVELOPMENT
----
 The app is developed using [ReactJS](https://github.com/reactjs/). Everything should be compiled into js files are deployed as a static site. We will develop a different component to wire in meaningful data through REST API later.
 
 * Git clone the repro.
