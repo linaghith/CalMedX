@@ -1,5 +1,5 @@
 ## CalMedX
-A team project for CS6440: Developing an intuitive EHR dashboard with better workflow to improve physicians' productivity.
+A team project for CS6440: Developing an intuitive EHR dashboard with better workflow to improve physician productivity.
 
 ## DEMO
 [http://calmedx.khoitran.me/](http://calmedx.khoitran.me/)
