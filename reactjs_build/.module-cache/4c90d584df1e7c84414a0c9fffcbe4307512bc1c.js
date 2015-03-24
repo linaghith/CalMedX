@@ -1,27 +1,26 @@
-var CBMedications = React.createClass({displayName: "CBMedications",
+var CBImmunizations = React.createClass({displayName: "CBImmunizations",
 
   render: function() {
 
-    var medicationList = this.props.medications.map(function(medication, index) {
+    var immunizationList = this.props.immunizations.map(function(immunization, index) {
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
-          React.createElement("dt", null, medication.displayName), 
-          React.createElement("dl", {className: "pull-right"}, medication.dateString), 
-          React.createElement("dl", null, medication.dosage)
+          React.createElement("dt", null, immunization.displayName)
         )
       );
     });
 
     return (
 
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-red"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          "Medications"
+          React.createElement("span", {className: "icon-i-pharmacy"}), 
+          "Immunization"
         ), 
 
         React.createElement("div", {className: "list-group"}, 
-          medicationList
+          immunizationList
         ), 
 
         React.createElement("a", {href: "#"}, 

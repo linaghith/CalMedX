@@ -1,27 +1,26 @@
-var CBMedications = React.createClass({
+var CBConditions = React.createClass({
 
   render: function() {
 
-    var medicationList = this.props.medications.map(function(medication, index) {
+    var conditionList = this.props.conditions.map(function(condition, index) {
       return (
         <div key={index} className="list-group-item">
-          <dt>{medication.displayName}</dt>
-          <dl className="pull-right">{medication.dateString}</dl>
-          <dl>{medication.dosage}</dl>
+          <dt>{condition.displayName}</dt>
         </div>
       );
     });
 
     return (
 
-      <div className="panel panel-primary">
+      <div className="panel panel-green">
 
         <div className="panel-heading">
-          Medications
+          <span className="icon-i-pharmacy"></span> 
+          Chronic Condition
         </div>
 
         <div className="list-group">
-          {medicationList}
+          {conditionList}
         </div>
 
         <a href="#">

@@ -1,13 +1,13 @@
-var CBMedications = React.createClass({displayName: "CBMedications",
+var CBProcedures = React.createClass({displayName: "CBProcedures",
 
   render: function() {
 
-    var medicationList = this.props.medications.map(function(medication, index) {
+    var procedureList = this.props.procedures.map(function(procedure, index) {
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
-          React.createElement("dt", null, medication.displayName), 
-          React.createElement("dl", {className: "pull-right"}, medication.dateString), 
-          React.createElement("dl", null, medication.dosage)
+          React.createElement("dt", null, procedure.displayName), 
+          React.createElement("dl", {className: "pull-right"}, procedure.dateString), 
+          React.createElement("dl", null, procedure.result)
         )
       );
     });
@@ -17,11 +17,12 @@ var CBMedications = React.createClass({displayName: "CBMedications",
       React.createElement("div", {className: "panel panel-primary"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          "Medications"
+          React.createElement("span", {className: "icon-i-pharmacy"}), 
+          "Procedures"
         ), 
 
         React.createElement("div", {className: "list-group"}, 
-          medicationList
+          procedureList
         ), 
 
         React.createElement("a", {href: "#"}, 
