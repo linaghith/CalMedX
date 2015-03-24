@@ -8,7 +8,7 @@ var DATA = {
     {
       displayName: 'Propranolol Extended Release 60 mg',
       dosage: 'Twice a day',
-      dateString: 'May 1, 2005'
+      dateString: 'May 21, 2005'
     },
   ],
 
