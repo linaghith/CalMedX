@@ -1,27 +1,26 @@
-var CBMedications = React.createClass({
+var CBFamilyHistories = React.createClass({
 
   render: function() {
 
-    var medicationList = this.props.medications.map(function(medication, index) {
+    var familyHistoryList = this.props.familyHistories.map(function(familyHistory, index) {
       return (
         <div key={index} className="list-group-item">
-          <dt>{medication.displayName}</dt>
-          <dl className="pull-right">{medication.dateString}</dl>
-          <dl>{medication.dosage}</dl>
+          <dt>{familyHistory.displayName}</dt>
         </div>
       );
     });
 
     return (
 
-      <div className="panel panel-primary">
+      <div className="panel panel-green">
 
         <div className="panel-heading">
-          Medications
+          <span className="icon-i-pharmacy"></span> 
+          Family History
         </div>
 
         <div className="list-group">
-          {medicationList}
+          {familyHistoryList}
         </div>
 
         <a href="#">
