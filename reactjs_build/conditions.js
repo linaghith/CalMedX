@@ -12,11 +12,10 @@ var CBConditions = React.createClass({displayName: "CBConditions",
 
     return (
 
-      React.createElement("div", {className: "panel panel-green"}, 
+      React.createElement("div", {className: "panel panel-yellow"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("span", {className: "icon-i-pharmacy"}), 
-          "Chronic Condition"
+          React.createElement("small", null, "Chronic Conditions")
         ), 
 
         React.createElement("div", {className: "list-group"}, 

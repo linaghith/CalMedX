@@ -15,8 +15,7 @@ var CBFamilyHistories = React.createClass({
       <div className="panel panel-green">
 
         <div className="panel-heading">
-          <span className="icon-i-pharmacy"></span> 
-          Family History
+          <small>Family History</small>
         </div>
 
         <div className="list-group">

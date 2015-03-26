@@ -12,11 +12,10 @@ var CBConditions = React.createClass({
 
     return (
 
-      <div className="panel panel-green">
+      <div className="panel panel-yellow">
 
         <div className="panel-heading">
-          <span className="icon-i-pharmacy"></span> 
-          Chronic Condition
+          <small>Chronic Conditions</small>
         </div>
 
         <div className="list-group">

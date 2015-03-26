@@ -6,7 +6,7 @@ var CBMedications = React.createClass({
       return (
         <div key={index} className="list-group-item">
           <dt>{medication.displayName}</dt>
-          <dl className="pull-right">{medication.dateString}</dl>
+          <dl>{medication.dateString}</dl>
           <dl>{medication.dosage}</dl>
         </div>
       );
@@ -17,7 +17,7 @@ var CBMedications = React.createClass({
       <div className="panel panel-primary">
 
         <div className="panel-heading">
-          Medications
+          <small>Medications</small>
         </div>
 
         <div className="list-group">

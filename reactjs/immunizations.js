@@ -12,11 +12,10 @@ var CBImmunizations = React.createClass({
 
     return (
 
-      <div className="panel panel-red">
+      <div className="panel panel-primary">
 
         <div className="panel-heading">
-          <span className="icon-i-pharmacy"></span> 
-          Immunization
+          <small>Immunization</small>
         </div>
 
         <div className="list-group">
