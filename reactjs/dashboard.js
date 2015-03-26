@@ -1,16 +1,17 @@
 var CMDashboard = React.createClass({
 
-  data: DATA,
-  allergiesdata: ALLERGIESDATA,
-  conditionsdata: CONDITIONSDATA,
-  complaintsdata: COMPLAINTSDATA,
-  familyhistorydata: FAMILYHISTORYDATA,
-  medicationsdata: MEDICATIONSDATA,
-  proceduresdata: PROCEDURESDATA,
-  immunizationsdata: IMMUNIZATIONSDATA,
-  patientvisitsummarydata: PATIENTVISITSUMMARYDATA,
-  patientvisithistorydata: PATIENTVISITHISTORYDATA,
-
+	data: DATA,
+	allergiesdata: ALLERGIESDATA,
+	conditionsdata: CONDITIONSDATA,
+	complaintsdata: COMPLAINTSDATA,
+	familyhistorydata: FAMILYHISTORYDATA,
+	medicationsdata: MEDICATIONSDATA,
+	proceduresdata: PROCEDURESDATA,
+	immunizationsdata: IMMUNIZATIONSDATA,
+	patientvisitsummarydata: PATIENTVISITSUMMARYDATA,
+	patientvisithistorydata: PATIENTVISITHISTORYDATA,
+	labsdata: LABSDATA,
+	
   render: function() {
 
     var wrapperStyle = {
@@ -43,14 +44,18 @@ var CMDashboard = React.createClass({
 		</div>
 
         <div className="row">
-            <div className="col-lg-2 col-md-6"> <CBMedications medications={this.medicationsdata.medications} /> </div>
+             <div className="col-lg-2 col-md-6"> <CBMedications medications={this.medicationsdata.medications} /> </div>
             <div className="col-lg-2 col-md-6"> <CBAllergies allergies={this.allergiesdata.allergies} /> </div>
             <div className="col-lg-2 col-md-6"> <CBProcedures procedures={this.proceduresdata.procedures} /> </div>
             <div className="col-lg-2 col-md-6"> <CBConditions conditions={this.conditionsdata.conditions} /> </div>
             <div className="col-lg-2 col-md-6"> <CBImmunizations immunizations={this.immunizationsdata.immunizations} /> </div>
             <div className="col-lg-2 col-md-6"> <CBFamilyHistories familyHistories={this.familyhistorydata.familyHistories} /> </div>
+           
         </div>
-
+         <div className="row">
+ 			<div className="col-lg-3 col-md-6"> <CBLabTest labTests={this.labsdata.labTests} /> </div>
+ 		</div>
+ 
 		<div className="row">
 			<div className="col-lg-12 col-md-6"> <CBPatientVisitSummaries patientVisitSummaries={this.patientvisitsummarydata.patientVisitSummaries} /> </div>
 			<div className="col-lg-12 col-md-6"> <CBPatientVisitHistories patientVisitHistories={this.patientvisithistorydata.patientVisitHistories} /> </div>
