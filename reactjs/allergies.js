@@ -13,7 +13,7 @@ var CBAllergies = React.createClass({
 
     return (
 
-      <div className="panel panel-red">
+      <div className="panel panel-warning">
 
         <div className="panel-heading">
           <small>Allergies</small>

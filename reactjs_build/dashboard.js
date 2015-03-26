@@ -1,16 +1,17 @@
 var CMDashboard = React.createClass({displayName: "CMDashboard",
 
-  data: DATA,
-  allergiesdata: ALLERGIESDATA,
-  conditionsdata: CONDITIONSDATA,
-  complaintsdata: COMPLAINTSDATA,
-  familyhistorydata: FAMILYHISTORYDATA,
-  medicationsdata: MEDICATIONSDATA,
-  proceduresdata: PROCEDURESDATA,
-  immunizationsdata: IMMUNIZATIONSDATA,
-  patientvisitsummarydata: PATIENTVISITSUMMARYDATA,
-  patientvisithistorydata: PATIENTVISITHISTORYDATA,
-
+	data: DATA,
+	allergiesdata: ALLERGIESDATA,
+	conditionsdata: CONDITIONSDATA,
+	complaintsdata: COMPLAINTSDATA,
+	familyhistorydata: FAMILYHISTORYDATA,
+	medicationsdata: MEDICATIONSDATA,
+	proceduresdata: PROCEDURESDATA,
+	immunizationsdata: IMMUNIZATIONSDATA,
+	patientvisitsummarydata: PATIENTVISITSUMMARYDATA,
+	patientvisithistorydata: PATIENTVISITHISTORYDATA,
+	labsdata: LABSDATA,
+	
   render: function() {
 
     var wrapperStyle = {
@@ -45,14 +46,18 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
 		), 
 
         React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-lg-2 col-md-4"}, " ", React.createElement(CBMedications, {medications: this.medicationsdata.medications}), " "), 
-            React.createElement("div", {className: "col-lg-2 col-md-4"}, " ", React.createElement(CBAllergies, {allergies: this.allergiesdata.allergies}), " "), 
-            React.createElement("div", {className: "col-lg-2 col-md-4"}, " ", React.createElement(CBProcedures, {procedures: this.proceduresdata.procedures}), " "), 
-            React.createElement("div", {className: "col-lg-2 col-md-4"}, " ", React.createElement(CBConditions, {conditions: this.conditionsdata.conditions}), " "), 
-            React.createElement("div", {className: "col-lg-2 col-md-4"}, " ", React.createElement(CBImmunizations, {immunizations: this.immunizationsdata.immunizations}), " "), 
-            React.createElement("div", {className: "col-lg-2 col-md-4"}, " ", React.createElement(CBFamilyHistories, {familyHistories: this.familyhistorydata.familyHistories}), " ")
+             React.createElement("div", {className: "col-lg-2 col-md-6"}, " ", React.createElement(CBMedications, {medications: this.medicationsdata.medications}), " "), 
+            React.createElement("div", {className: "col-lg-2 col-md-6"}, " ", React.createElement(CBAllergies, {allergies: this.allergiesdata.allergies}), " "), 
+            React.createElement("div", {className: "col-lg-2 col-md-6"}, " ", React.createElement(CBProcedures, {procedures: this.proceduresdata.procedures}), " "), 
+            React.createElement("div", {className: "col-lg-2 col-md-6"}, " ", React.createElement(CBConditions, {conditions: this.conditionsdata.conditions}), " "), 
+            React.createElement("div", {className: "col-lg-2 col-md-6"}, " ", React.createElement(CBImmunizations, {immunizations: this.immunizationsdata.immunizations}), " "), 
+            React.createElement("div", {className: "col-lg-2 col-md-6"}, " ", React.createElement(CBFamilyHistories, {familyHistories: this.familyhistorydata.familyHistories}), " ")
+           
         ), 
-
+         React.createElement("div", {className: "row"}, 
+ 			React.createElement("div", {className: "col-lg-3 col-md-6"}, " ", React.createElement(CBLabTest, {labTests: this.labsdata.labTests}), " ")
+ 		), 
+ 
 		React.createElement("div", {className: "row"}, 
 			React.createElement("div", {className: "col-lg-12 col-md-6"}, " ", React.createElement(CBPatientVisitSummaries, {patientVisitSummaries: this.patientvisitsummarydata.patientVisitSummaries}), " "), 
 			React.createElement("div", {className: "col-lg-12 col-md-6"}, " ", React.createElement(CBPatientVisitHistories, {patientVisitHistories: this.patientvisithistorydata.patientVisitHistories}), " ")

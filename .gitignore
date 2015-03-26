@@ -1,2 +1,6 @@
 docs/*
+<<<<<<< HEAD
 reactjs_build/.module-cache/*
+=======
+.module-cache*
+>>>>>>> 4316b601d43088e0d8a14ed59eb94e9184b69947

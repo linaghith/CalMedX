@@ -13,7 +13,7 @@ var CBAllergies = React.createClass({displayName: "CBAllergies",
 
     return (
 
-      React.createElement("div", {className: "panel panel-red"}, 
+      React.createElement("div", {className: "panel panel-warning"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("small", null, "Allergies")
