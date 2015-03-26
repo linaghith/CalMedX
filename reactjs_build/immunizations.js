@@ -12,11 +12,10 @@ var CBImmunizations = React.createClass({displayName: "CBImmunizations",
 
     return (
 
-      React.createElement("div", {className: "panel panel-red"}, 
+      React.createElement("div", {className: "panel panel-primary"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("span", {className: "icon-i-pharmacy"}), 
-          "Immunization"
+          React.createElement("small", null, "Immunization")
         ), 
 
         React.createElement("div", {className: "list-group"}, 

@@ -16,8 +16,7 @@ var CBAllergies = React.createClass({
       <div className="panel panel-red">
 
         <div className="panel-heading">
-          <span className="icon-i-ear-nose-throat"></span> 
-          Allergies
+          <small>Allergies</small>
         </div>
 
         <div className="list-group">

@@ -6,7 +6,7 @@ var CBProcedures = React.createClass({displayName: "CBProcedures",
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
           React.createElement("dt", null, procedure.displayName), 
-          React.createElement("dl", {className: "pull-right"}, procedure.dateString), 
+          React.createElement("dl", null, procedure.dateString), 
           React.createElement("dl", null, procedure.result)
         )
       );
@@ -14,11 +14,10 @@ var CBProcedures = React.createClass({displayName: "CBProcedures",
 
     return (
 
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-green"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("span", {className: "icon-i-pharmacy"}), 
-          "Procedures"
+          React.createElement("small", null, "Procedures")
         ), 
 
         React.createElement("div", {className: "list-group"}, 

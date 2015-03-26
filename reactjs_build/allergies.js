@@ -16,8 +16,7 @@ var CBAllergies = React.createClass({displayName: "CBAllergies",
       React.createElement("div", {className: "panel panel-red"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("span", {className: "icon-i-ear-nose-throat"}), 
-          "Allergies"
+          React.createElement("small", null, "Allergies")
         ), 
 
         React.createElement("div", {className: "list-group"}, 
