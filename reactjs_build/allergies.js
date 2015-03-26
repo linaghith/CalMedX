@@ -13,11 +13,10 @@ var CBAllergies = React.createClass({displayName: "CBAllergies",
 
     return (
 
-      React.createElement("div", {className: "panel panel-red"}, 
+      React.createElement("div", {className: "panel panel-warning"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("span", {className: "icon-i-ear-nose-throat"}), 
-          "Allergies"
+          "Known Allergies"
         ), 
 
         React.createElement("div", {className: "list-group"}, 
