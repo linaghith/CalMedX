@@ -24,3 +24,21 @@ dl {
 	cursor: pointer;
 	cursor: hand;
 }
+
+.row {
+  margin-left: -15px !important;
+}
+
+/* Name header section */
+.name-header {
+  margin-bottom: 10px;
+}
+.name-header > .pull-left {
+  margin-left: 30px;
+}
+.name-header > .pull-right {
+  margin-right: 30px;
+}
+.current-vitals {
+  margin-left: 20px;
+}

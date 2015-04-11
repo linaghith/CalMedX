@@ -53,23 +53,29 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
 
         React.createElement("div", {id: "page-wrapper", style: wrapperStyle}, 
 
-          React.createElement("div", {className: "row"}, 
-              React.createElement("h3", null, "Marla Dixon 58, F, American", 
-                  React.createElement("span", {className: "pull-right text-muted small"}, 
-                      React.createElement("small", null, 
-                         React.createElement("br", null, "DOB:  12/12/1956"), 
-                         React.createElement("br", null, "MRN:  402500433")
-                      )
-                  ), React.createElement("br", null)
-              )
+          React.createElement("div", {className: "row name-header"}, 
+            React.createElement("div", {className: "pull-left"}, 
+                React.createElement("h3", null, "Marla Dixon 58, F, American")
+            ), 
+
+            React.createElement("div", {className: "pull-right"}, 
+                React.createElement("span", {className: "pull-right text-muted small"}, 
+                    React.createElement("small", null, 
+                       React.createElement("br", null, "DOB:  12/12/1956"), 
+                       React.createElement("br", null, "MRN:  402500433")
+                    )
+                )
+            )
+
           ), 
+
 
           React.createElement("div", {className: "row"}, 
                   React.createElement("div", {className: "col-lg-12"}, " ", React.createElement(CBComplaints, {complaints: this.state.complaintsdata.complaints}), " ")
           ), 
 
           React.createElement("div", {className: "row"}, 
-            React.createElement("h4", null, "Current Vitals")
+            React.createElement("h4", {className: "current-vitals"}, "Current Vitals")
           ), 
 
           React.createElement("div", {className: "row"}, 

@@ -53,23 +53,29 @@ var CMDashboard = React.createClass({
 
         <div id="page-wrapper" style={wrapperStyle}>
 
-          <div className="row">
-              <h3>Marla Dixon 58, F, American
-                  <span className="pull-right text-muted small">
-                      <small>
-                         <br>DOB:  12/12/1956</br>
-                         <br>MRN:  402500433</br>
-                      </small>
-                  </span><br></br>
-              </h3>
+          <div className="row name-header">
+            <div className="pull-left">
+                <h3>Marla Dixon 58, F, American</h3>
+            </div>
+
+            <div className="pull-right">
+                <span className="pull-right text-muted small">
+                    <small>
+                       <br>DOB:  12/12/1956</br>
+                       <br>MRN:  402500433</br>
+                    </small>
+                </span>
+            </div>
+
           </div>
+
 
           <div className="row">
                   <div className="col-lg-12"> <CBComplaints complaints={this.state.complaintsdata.complaints} /> </div>
           </div>
 
           <div className="row">
-            <h4>Current Vitals</h4>
+            <h4 className="current-vitals">Current Vitals</h4>
           </div>
 
           <div className="row">
