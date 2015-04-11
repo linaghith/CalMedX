@@ -3,6 +3,7 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
   getInitialState: function() {
     return {
       data: DATA,
+      patientData: PATIENTDATA,
       allergiesdata: ALLERGIESDATA,
       conditionsdata: CONDITIONSDATA,
       complaintsdata: COMPLAINTSDATA,
@@ -19,7 +20,32 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
   componentDidMount: function() {
     var patient_id = "13123";
 
-    var med_url = "fhir_proxy.php?json_url=baseDstu1/MedicationPrescription?patient=" + patient_id + "&_format=json&_pretty=true";
+    // fetching patientData
+    var patient_url = "fhir_proxy.php?json_url=baseDstu1/Patient?_id=" + patient_id + "&_format=json";
+    $.get(patient_url, function(result) {
+      var data = JSON.parse(result);
+      var content = data['entry'][0]['content'];
+
+      var birthYear = content['birthDate'].split('-')[0];
+      var age = (new Date().getFullYear()) - birthYear;
+
+      var patientData = {
+        name: content['name'][0]['given'] + " " + content['name'][0]['family'],
+        age: age,
+        ethnicity: 'American',
+        sex: content['gender']['coding'][0]['code'],
+        dob: content['birthDate'],
+        mrn: patient_id
+      };
+
+      this.setState({
+        patientData: patientData
+      });
+    }.bind(this));
+
+
+    // fetching medicationsdata
+    var med_url = "fhir_proxy.php?json_url=baseDstu1/MedicationPrescription?patient=" + patient_id + "&_format=json";
     $.get(med_url, function(result) {
       var dat = JSON.parse(result);
       var entries = dat['entry'];
@@ -54,21 +80,8 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
         React.createElement("div", {id: "page-wrapper", style: wrapperStyle}, 
 
           React.createElement("div", {className: "row name-header"}, 
-            React.createElement("div", {className: "pull-left"}, 
-                React.createElement("h3", null, "Marla Dixon 58, F, American")
-            ), 
-
-            React.createElement("div", {className: "pull-right"}, 
-                React.createElement("span", {className: "pull-right text-muted small"}, 
-                    React.createElement("small", null, 
-                       React.createElement("br", null, "DOB:  12/12/1956"), 
-                       React.createElement("br", null, "MRN:  402500433")
-                    )
-                )
-            )
-
+              React.createElement(CBNameHeader, {patientData: this.state.patientData})
           ), 
-
 
           React.createElement("div", {className: "row"}, 
                   React.createElement("div", {className: "col-lg-12"}, " ", React.createElement(CBComplaints, {complaints: this.state.complaintsdata.complaints}), " ")

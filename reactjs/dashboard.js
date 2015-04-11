@@ -3,6 +3,7 @@ var CMDashboard = React.createClass({
   getInitialState: function() {
     return {
       data: DATA,
+      patientData: PATIENTDATA,
       allergiesdata: ALLERGIESDATA,
       conditionsdata: CONDITIONSDATA,
       complaintsdata: COMPLAINTSDATA,
@@ -19,7 +20,32 @@ var CMDashboard = React.createClass({
   componentDidMount: function() {
     var patient_id = "13123";
 
-    var med_url = "fhir_proxy.php?json_url=baseDstu1/MedicationPrescription?patient=" + patient_id + "&_format=json&_pretty=true";
+    // fetching patientData
+    var patient_url = "fhir_proxy.php?json_url=baseDstu1/Patient?_id=" + patient_id + "&_format=json";
+    $.get(patient_url, function(result) {
+      var data = JSON.parse(result);
+      var content = data['entry'][0]['content'];
+
+      var birthYear = content['birthDate'].split('-')[0];
+      var age = (new Date().getFullYear()) - birthYear;
+
+      var patientData = {
+        name: content['name'][0]['given'] + " " + content['name'][0]['family'],
+        age: age,
+        ethnicity: 'American',
+        sex: content['gender']['coding'][0]['code'],
+        dob: content['birthDate'],
+        mrn: patient_id
+      };
+
+      this.setState({
+        patientData: patientData
+      });
+    }.bind(this));
+
+
+    // fetching medicationsdata
+    var med_url = "fhir_proxy.php?json_url=baseDstu1/MedicationPrescription?patient=" + patient_id + "&_format=json";
     $.get(med_url, function(result) {
       var dat = JSON.parse(result);
       var entries = dat['entry'];
@@ -54,21 +80,8 @@ var CMDashboard = React.createClass({
         <div id="page-wrapper" style={wrapperStyle}>
 
           <div className="row name-header">
-            <div className="pull-left">
-                <h3>Marla Dixon 58, F, American</h3>
-            </div>
-
-            <div className="pull-right">
-                <span className="pull-right text-muted small">
-                    <small>
-                       <br>DOB:  12/12/1956</br>
-                       <br>MRN:  402500433</br>
-                    </small>
-                </span>
-            </div>
-
+              <CBNameHeader patientData={this.state.patientData} />
           </div>
-
 
           <div className="row">
                   <div className="col-lg-12"> <CBComplaints complaints={this.state.complaintsdata.complaints} /> </div>
