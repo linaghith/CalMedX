@@ -1,18 +1,34 @@
 var CMDashboard = React.createClass({
-
-	data: DATA,
-	allergiesdata: ALLERGIESDATA,
-	conditionsdata: CONDITIONSDATA,
-	complaintsdata: COMPLAINTSDATA,
-	familyhistorydata: FAMILYHISTORYDATA,
-	medicationsdata: MEDICATIONSDATA,
-	proceduresdata: PROCEDURESDATA,
-	immunizationsdata: IMMUNIZATIONSDATA,
-	patientvisitsummarydata: PATIENTVISITSUMMARYDATA,
-	patientvisithistorydata: PATIENTVISITHISTORYDATA,
-	labsdata: LABSDATA,
 	
+  getInitialState: function() {
+    return {
+      data: DATA,
+      allergiesdata: ALLERGIESDATA,
+      conditionsdata: CONDITIONSDATA,
+      complaintsdata: COMPLAINTSDATA,
+      familyhistorydata: FAMILYHISTORYDATA,
+      medicationsdata: MEDICATIONSDATA,
+      proceduresdata: PROCEDURESDATA,
+      immunizationsdata: IMMUNIZATIONSDATA,
+      patientvisitsummarydata: PATIENTVISITSUMMARYDATA,
+      patientvisithistorydata: PATIENTVISITHISTORYDATA,
+      labsdata: LABSDATA,
+    };
+  },
+
+  componentDidMount: function() {
+    var patient_id = "123";
+
+    $.get("", function(result) {
+    }.bind(this));
+
+  },
+
   render: function() {
+  
+    $.get('fhir_proxy.php', function(e) {
+      console.log(e);
+    });
 
     var wrapperStyle = {
       minHeight: '419px'
@@ -33,34 +49,34 @@ var CMDashboard = React.createClass({
             </h3>
         </div>
 		<div className="row">
-            <div className="col-lg-12"> <CBComplaints complaints={this.complaintsdata.complaints} /> </div>
+            <div className="col-lg-12"> <CBComplaints complaints={this.state.complaintsdata.complaints} /> </div>
 		</div>
 		<div className="row">
 			<h4>Current Vitals</h4>
 		</div>
 		<div className="row">
-            <div className="col-md-3 col-sm-6"> <CBBloodPressures bloodPressures={this.data.bloodPressures} /> </div>
-            <div className="col-md-3 col-sm-6"> <CBBodyTemperatures bodyTemperatures={this.data.bodyTemperatures} /> </div>
-            <div className="col-md-3 col-sm-6"> <CBBodyWeights bodyWeights={this.data.bodyWeights} /> </div>
-            <div className="col-md-3 col-sm-6"> <CBHeartRates heartRates={this.data.heartRates} /> </div>
+            <div className="col-md-3 col-sm-6"> <CBBloodPressures bloodPressures={this.state.data.bloodPressures} /> </div>
+            <div className="col-md-3 col-sm-6"> <CBBodyTemperatures bodyTemperatures={this.state.data.bodyTemperatures} /> </div>
+            <div className="col-md-3 col-sm-6"> <CBBodyWeights bodyWeights={this.state.data.bodyWeights} /> </div>
+            <div className="col-md-3 col-sm-6"> <CBHeartRates heartRates={this.state.data.heartRates} /> </div>
 		</div>
 
         <div className="row">
-             <div className="col-lg-2 col-md-6"> <CBMedications medications={this.medicationsdata.medications} /> </div>
-            <div className="col-lg-2 col-md-6"> <CBAllergies allergies={this.allergiesdata.allergies} /> </div>
-            <div className="col-lg-2 col-md-6"> <CBProcedures procedures={this.proceduresdata.procedures} /> </div>
-            <div className="col-lg-2 col-md-6"> <CBConditions conditions={this.conditionsdata.conditions} /> </div>
-            <div className="col-lg-2 col-md-6"> <CBImmunizations immunizations={this.immunizationsdata.immunizations} /> </div>
-            <div className="col-lg-2 col-md-6"> <CBFamilyHistories familyHistories={this.familyhistorydata.familyHistories} /> </div>
+             <div className="col-lg-2 col-md-6"> <CBMedications medications={this.state.medicationsdata.medications} /> </div>
+            <div className="col-lg-2 col-md-6"> <CBAllergies allergies={this.state.allergiesdata.allergies} /> </div>
+            <div className="col-lg-2 col-md-6"> <CBProcedures procedures={this.state.proceduresdata.procedures} /> </div>
+            <div className="col-lg-2 col-md-6"> <CBConditions conditions={this.state.conditionsdata.conditions} /> </div>
+            <div className="col-lg-2 col-md-6"> <CBImmunizations immunizations={this.state.immunizationsdata.immunizations} /> </div>
+            <div className="col-lg-2 col-md-6"> <CBFamilyHistories familyHistories={this.state.familyhistorydata.familyHistories} /> </div>
            
         </div>
          <div className="row">
- 			<div className="col-lg-3 col-md-6"> <CBLabTest labTests={this.labsdata.labTests} /> </div>
+ 			<div className="col-lg-3 col-md-6"> <CBLabTest labTests={this.state.labsdata.labTests} /> </div>
  		</div>
  
 		<div className="row">
-			<div className="col-lg-12 col-md-6"> <CBPatientVisitSummaries patientVisitSummaries={this.patientvisitsummarydata.patientVisitSummaries} /> </div>
-			<div className="col-lg-12 col-md-6"> <CBPatientVisitHistories patientVisitHistories={this.patientvisithistorydata.patientVisitHistories} /> </div>
+			<div className="col-lg-12 col-md-6"> <CBPatientVisitSummaries patientVisitSummaries={this.state.patientvisitsummarydata.patientVisitSummaries} /> </div>
+			<div className="col-lg-12 col-md-6"> <CBPatientVisitHistories patientVisitHistories={this.state.patientvisithistorydata.patientVisitHistories} /> </div>
 		</div>
 
 
