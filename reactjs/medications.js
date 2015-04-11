@@ -14,7 +14,7 @@ var CBMedications = React.createClass({
 
     return (
 
-      <div className="panel panel-primary">
+      <div className="panel panel-primary panel-info">
 
         <div className="panel-heading">
           <small>Medications</small>

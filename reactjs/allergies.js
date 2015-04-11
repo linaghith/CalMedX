@@ -35,10 +35,10 @@ var CBAllergies = React.createClass({
 
     return (
 
-      <div className="panel panel-warning">
+      <div className="panel panel-danger">
 
         <div className="panel-heading">
-          Known Allergies
+          <small>Allergies</small>
         </div>
 
         <div className="list-group">

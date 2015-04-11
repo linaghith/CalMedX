@@ -12,7 +12,7 @@ var CBFamilyHistories = React.createClass({
 
     return (
 
-      <div className="panel panel-green">
+      <div className="panel panel-success">
 
         <div className="panel-heading">
           <small>Family History</small>

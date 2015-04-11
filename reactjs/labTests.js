@@ -7,10 +7,10 @@ var CBLabTest = React.createClass({
   	var newdivid = divid +'labdiv';
 	if ($('#'+newdivid).hasClass('nodisplay')){
     	$('#'+newdivid).removeClass('nodisplay');
-    	$('#'+divid+'lablink').html('[-]');
+    	$('#'+divid+'lablink').html(' [-] ');
     }else{
     	$('#'+newdivid).addClass('nodisplay');
-    	$('#'+divid+'lablink').html('[+]');
+    	$('#'+divid+'lablink').html(' [+] ');
     }
   },
   
@@ -51,7 +51,7 @@ var CBLabTest = React.createClass({
           Lab Results
         </div>
 
-        <div className="list-group">{labTestList}<input type='button' value='Click me'  onClick={this.handleClick} />
+        <div className="list-group">{labTestList}
         </div>
     
         <a href="#">

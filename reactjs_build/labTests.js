@@ -7,10 +7,10 @@ var CBLabTest = React.createClass({displayName: "CBLabTest",
   	var newdivid = divid +'labdiv';
 	if ($('#'+newdivid).hasClass('nodisplay')){
     	$('#'+newdivid).removeClass('nodisplay');
-    	$('#'+divid+'lablink').html('[-]');
+    	$('#'+divid+'lablink').html(' [-] ');
     }else{
     	$('#'+newdivid).addClass('nodisplay');
-    	$('#'+divid+'lablink').html('[+]');
+    	$('#'+divid+'lablink').html(' [+] ');
     }
   },
   
@@ -51,7 +51,7 @@ var CBLabTest = React.createClass({displayName: "CBLabTest",
           "Lab Results"
         ), 
 
-        React.createElement("div", {className: "list-group"}, labTestList, React.createElement("input", {type: "button", value: "Click me", onClick: this.handleClick})
+        React.createElement("div", {className: "list-group"}, labTestList
         ), 
     
         React.createElement("a", {href: "#"}, 

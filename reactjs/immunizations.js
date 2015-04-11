@@ -12,7 +12,7 @@ var CBImmunizations = React.createClass({
 
     return (
 
-      <div className="panel panel-primary">
+      <div className="panel panel-primary panel-success">
 
         <div className="panel-heading">
           <small>Immunization</small>

@@ -14,7 +14,7 @@ var CBMedications = React.createClass({displayName: "CBMedications",
 
     return (
 
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-primary panel-info"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("small", null, "Medications")

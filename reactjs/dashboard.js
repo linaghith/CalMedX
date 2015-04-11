@@ -82,11 +82,11 @@ var CMDashboard = React.createClass({
           <div className="row">
               <div className="col-md-4"> <CBMedications medications={this.state.medicationsdata.medications} /> </div>
               <div className="col-md-4"> <CBAllergies allergies={this.state.allergiesdata.allergies} /> </div>
-              <div className="col-md-4"> <CBProcedures procedures={this.state.proceduresdata.procedures} /> </div>
+              <div className="col-md-4"> <CBConditions conditions={this.state.conditionsdata.conditions} /> </div>
           </div>
 
           <div className="row">
-              <div className="col-md-4"> <CBConditions conditions={this.state.conditionsdata.conditions} /> </div>
+              <div className="col-md-4"> <CBProcedures procedures={this.state.proceduresdata.procedures} /> </div>
               <div className="col-md-4"> <CBImmunizations immunizations={this.state.immunizationsdata.immunizations} /> </div>
               <div className="col-md-4"> <CBFamilyHistories familyHistories={this.state.familyhistorydata.familyHistories} /> </div>
           </div>

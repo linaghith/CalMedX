@@ -14,7 +14,7 @@ var CBProcedures = React.createClass({displayName: "CBProcedures",
 
     return (
 
-      React.createElement("div", {className: "panel panel-green"}, 
+      React.createElement("div", {className: "panel panel-success"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("small", null, "Procedures")

@@ -82,11 +82,11 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
           React.createElement("div", {className: "row"}, 
               React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBMedications, {medications: this.state.medicationsdata.medications}), " "), 
               React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBAllergies, {allergies: this.state.allergiesdata.allergies}), " "), 
-              React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBProcedures, {procedures: this.state.proceduresdata.procedures}), " ")
+              React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBConditions, {conditions: this.state.conditionsdata.conditions}), " ")
           ), 
 
           React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBConditions, {conditions: this.state.conditionsdata.conditions}), " "), 
+              React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBProcedures, {procedures: this.state.proceduresdata.procedures}), " "), 
               React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBImmunizations, {immunizations: this.state.immunizationsdata.immunizations}), " "), 
               React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBFamilyHistories, {familyHistories: this.state.familyhistorydata.familyHistories}), " ")
           ), 

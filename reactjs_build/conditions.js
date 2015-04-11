@@ -12,7 +12,7 @@ var CBConditions = React.createClass({displayName: "CBConditions",
 
     return (
 
-      React.createElement("div", {className: "panel panel-yellow"}, 
+      React.createElement("div", {className: "panel panel-warning"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("small", null, "Chronic Conditions")
