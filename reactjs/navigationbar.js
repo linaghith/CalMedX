@@ -30,34 +30,6 @@ var CMNavigationBar = React.createClass({
               </ul>
           </li>
         </ul>
-
-
-        <div className="navbar-default sidebar" role="navigation">
-          <div className="sidebar-nav navbar-collapse active">
-              <ul className="nav in" id="side-menu">
-    
-                  <li className="sidebar-search">
-                      <div className="input-group custom-search-form">
-                          <input type="text" className="form-control" placeholder="Search..." />
-                          <span className="input-group-btn">
-                          <button className="btn btn-default" type="button">
-                              <i className="fa fa-search"></i>
-                          </button>
-                      </span>
-                      </div>
-                  </li>
-      
-                  <li>
-                      <a href="#" className="active"><i className="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                  </li>
-              
-                  <li>
-                      <a href="#" className="active"><i className="fa fa-files-o fa-fw"></i> Sample Pages</a>
-                  </li>
-              </ul>
-            </div>
-        </div>
-
     </nav>
     );
   }
