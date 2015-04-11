@@ -29,35 +29,7 @@ var CMNavigationBar = React.createClass({displayName: "CMNavigationBar",
                   )
               )
           )
-        ), 
-
-
-        React.createElement("div", {className: "navbar-default sidebar", role: "navigation"}, 
-          React.createElement("div", {className: "sidebar-nav navbar-collapse active"}, 
-              React.createElement("ul", {className: "nav in", id: "side-menu"}, 
-    
-                  React.createElement("li", {className: "sidebar-search"}, 
-                      React.createElement("div", {className: "input-group custom-search-form"}, 
-                          React.createElement("input", {type: "text", className: "form-control", placeholder: "Search..."}), 
-                          React.createElement("span", {className: "input-group-btn"}, 
-                          React.createElement("button", {className: "btn btn-default", type: "button"}, 
-                              React.createElement("i", {className: "fa fa-search"})
-                          )
-                      )
-                      )
-                  ), 
-      
-                  React.createElement("li", null, 
-                      React.createElement("a", {href: "#", className: "active"}, React.createElement("i", {className: "fa fa-dashboard fa-fw"}), " Dashboard")
-                  ), 
-              
-                  React.createElement("li", null, 
-                      React.createElement("a", {href: "#", className: "active"}, React.createElement("i", {className: "fa fa-files-o fa-fw"}), " Sample Pages")
-                  )
-              )
-            )
         )
-
     )
     );
   }
