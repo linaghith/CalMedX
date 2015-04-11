@@ -6,7 +6,7 @@ var CBMedications = React.createClass({displayName: "CBMedications",
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
           React.createElement("dt", null, medication.displayName), 
-          React.createElement("dl", null, medication.dateString), 
+          React.createElement("dl", null, medication.dispense), 
           React.createElement("dl", null, medication.dosage)
         )
       );

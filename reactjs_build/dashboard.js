@@ -17,19 +17,32 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
   },
 
   componentDidMount: function() {
-    var patient_id = "123";
+    var patient_id = "13123";
 
-    $.get("", function(result) {
+    var med_url = "fhir_proxy.php?json_url=baseDstu1/MedicationPrescription?patient=" + patient_id + "&_format=json&_pretty=true";
+    $.get(med_url, function(result) {
+      var dat = JSON.parse(result);
+      var entries = dat['entry'];
+      med_data = [];
+
+      for (var i = 0; i < entries.length; i++) {
+        var entry = entries[i];
+        var content = entry['content'];
+        med_data.push({
+          displayName: entry['title'],
+          dosage: content['dosageInstruction'][0]['text'],
+          dispense: content['dispense']['quantity']['value'] + " " + content['dispense']['quantity']['units']
+        });
+      }
+      this.setState({
+        medicationsdata: {'medications': med_data}
+      });
     }.bind(this));
 
   },
 
   render: function() {
   
-    $.get('fhir_proxy.php', function(e) {
-      console.log(e);
-    });
-
     var wrapperStyle = {
       minHeight: '419px'
     };
