@@ -1,6 +1,7 @@
 var MEDICATIONSDATA = {
 
   'medications': [
+    /*
     {
       displayName: 'Lasix 40 mg',
       dosage: 'Daily',
@@ -11,5 +12,6 @@ var MEDICATIONSDATA = {
       dosage: 'Twice a day',
       dispense: 'May 1, 2005'
     },
+    */
   ]
 }
