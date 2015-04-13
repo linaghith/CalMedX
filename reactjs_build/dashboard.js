@@ -75,7 +75,7 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
 
     return (
       
-      React.createElement("div", {className: "container"}, 
+      React.createElement("div", null, 
 
         React.createElement("div", {id: "page-wrapper", style: wrapperStyle}, 
 
@@ -97,7 +97,12 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
               React.createElement("div", {className: "col-md-3 col-sm-6"}, " ", React.createElement(CBBodyWeights, {bodyWeights: this.state.data.bodyWeights}), " "), 
               React.createElement("div", {className: "col-md-3 col-sm-6"}, " ", React.createElement(CBHeartRates, {heartRates: this.state.data.heartRates}), " ")
           ), 
-
+          
+          React.createElement("div", {className: "row"}, 
+            React.createElement("h4", {className: "current-vitals"}, "Vitals History"), 
+             React.createElement("div", {className: "col-md-3 col-sm-6"}, " ", React.createElement(CBBloodPressuresHistory, {bloodPressuresHistory: this.state.data.bloodPressuresHistory}), " ")
+          ), 
+          
           React.createElement("div", {className: "row"}, 
               React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBMedications, {medications: this.state.medicationsdata.medications}), " "), 
               React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBAllergies, {allergies: this.state.allergiesdata.allergies}), " "), 

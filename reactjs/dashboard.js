@@ -75,7 +75,7 @@ var CMDashboard = React.createClass({
 
     return (
       
-      <div className="container">
+      <div>
 
         <div id="page-wrapper" style={wrapperStyle}>
 
@@ -97,7 +97,12 @@ var CMDashboard = React.createClass({
               <div className="col-md-3 col-sm-6"> <CBBodyWeights bodyWeights={this.state.data.bodyWeights} /> </div>
               <div className="col-md-3 col-sm-6"> <CBHeartRates heartRates={this.state.data.heartRates} /> </div>
           </div>
-
+          
+          <div className="row">
+            <h4 className="current-vitals">Vitals History</h4>
+             <div className="col-md-3 col-sm-6"> <CBBloodPressuresHistory bloodPressuresHistory={this.state.data.bloodPressuresHistory} /> </div>
+          </div>
+          
           <div className="row">
               <div className="col-md-4"> <CBMedications medications={this.state.medicationsdata.medications} /> </div>
               <div className="col-md-4"> <CBAllergies allergies={this.state.allergiesdata.allergies} /> </div>
