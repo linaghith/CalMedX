@@ -8,13 +8,15 @@ var CBComplaints = React.createClass({displayName: "CBComplaints",
       );
     });
 
-    return (
-		React.createElement("div", {className: "col-lg-12"}, 
-		    React.createElement("div", {className: "well well-sm"}, 
-		        React.createElement("h4", null, "Chief Complaint"), 
-		        complaintList
-		    )
-		) 
+    return (		
+      React.createElement("div", {className: "panel panel-info"}, 
+
+        React.createElement("div", {className: "panel-heading"}, "Chief Complaint"), 
+
+        React.createElement("div", {className: "list-group"}, " ", complaintList)
+
+      )
+      		
     );
   }
 });

@@ -3,6 +3,7 @@ var CBBloodPressuresHistory = React.createClass({displayName: "CBBloodPressuresH
   	return(
       React.createElement("div", {className: "chart-container"}, 
 		React.createElement("div", {id: "placeholder", className: "chart-placeholder"})
+		
 	  )
 	
   );
@@ -47,6 +48,7 @@ var CBBloodPressuresHistory = React.createClass({displayName: "CBBloodPressuresH
 		} ],
 		legend: { position: "se" }
 	});
+	
   	}
 
 

@@ -7,8 +7,7 @@ var CBBloodPressures = React.createClass({displayName: "CBBloodPressures",
 			React.createElement("div", {className: "panel-heading"}, 
 				React.createElement("div", {className: "row"}, 
 					React.createElement("div", {className: "col-xs-9 text-center"}, 
-						React.createElement("div", {className: "small"}, "120/80"), 
-						React.createElement("div", {className: "small"}, "Blood Pressure")
+						React.createElement("div", {className: "small"}, "Blood Pressure: 120/80")
 					), 
 					React.createElement("div", {className: "col-xs-3"})
 				)
