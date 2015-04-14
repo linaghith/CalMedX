@@ -1,20 +1,5 @@
-var CMNavigationBar = React.createClass({
+var CMAppointmentsNavi = React.createClass({
   render: function() {
-	var monthNames = [
-        "January", "February", "March",
-        "April", "May", "June", "July",
-        "August", "September", "October",
-        "November", "December"
-    ];
-	var date = new Date();
-    var day = date.getDate();
-    var monthIndex = date.getMonth();
-    var year = date.getFullYear();
-	var minutes= date.getMinutes();
-	var hours= date.getHours();
-	var seconds= date. getSeconds();
-	
-    var n=day+' '+ monthNames[monthIndex]+' '+ year+ ' '+hours+':'+minutes+':'+seconds;
     
     var topBarStyle = {
       "marginBottom": 0
@@ -24,8 +9,7 @@ var CMNavigationBar = React.createClass({
       <nav className="navbar navbar-default navbar-static-top" role="navigation" style={topBarStyle}>
 
         <div className="navbar-header">
-          <a className="navbar-brand" href="appointments.html">eCalMedX-{n}</a>
-          
+          <a className="navbar-brand" href="appointments.html">eCalMedX</a>
         </div>
 
 
