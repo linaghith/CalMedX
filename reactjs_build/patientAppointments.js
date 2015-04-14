@@ -15,9 +15,12 @@ var CBPatientAppointments = React.createClass({displayName: "CBPatientAppointmen
     var today=monthNames[monthIndex]+' '+day+', '+ year;
 
     var patientAppointmentList = this.props.patients.map(function(patient, index) {
+
+      var url = "patient.html?patient_id=" + patient.pid;
+
       return (
 		  React.createElement("tr", {className: "success"}, 	
-          React.createElement("td", null, React.createElement("a", {href: "index.html"}, patient.displayName)), 
+          React.createElement("td", null, React.createElement("a", {href: url}, patient.displayName)), 
 		  React.createElement("td", null, patient.appointmentType), 
 		  React.createElement("td", null, patient.appointmentReason), 
 		  React.createElement("td", null, patient.status)

@@ -18,7 +18,8 @@ var CMDashboard = React.createClass({
   },
 
   componentDidMount: function() {
-    var patient_id = "13123";
+    var get_params = window.location.search.replace("?", "");
+    var patient_id = get_params.split('=')[1];
 
     // fetching patientData
     var patient_url = "fhir_proxy.php?json_url=baseDstu1/Patient?_id=" + patient_id + "&_format=json";
