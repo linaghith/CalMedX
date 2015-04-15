@@ -7,8 +7,7 @@ var CBBodyTemperatures = React.createClass({
 			<div className="panel-heading">
 				<div className="row">
 					<div className="col-xs-9 text-center">
-						<div className="small">99.7</div>
-						<div className="small">Body Temperature</div>
+						<div className="small">Body Temperature: 99.7</div>
 					</div>
 					<div className="col-xs-3"></div>
 				</div>

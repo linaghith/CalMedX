@@ -7,8 +7,7 @@ var CBBloodPressures = React.createClass({
 			<div className="panel-heading">
 				<div className="row">
 					<div className="col-xs-9 text-center">
-						<div className="small">120/80</div>
-						<div className="small">Blood Pressure</div>
+						<div className="small">Blood Pressure: 120/80</div>
 					</div>
 					<div className="col-xs-3"></div>
 				</div>

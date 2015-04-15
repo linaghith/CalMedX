@@ -8,13 +8,15 @@ var CBComplaints = React.createClass({
       );
     });
 
-    return (
-		<div className="col-lg-12">
-		    <div className="well well-sm">
-		        <h4>Chief Complaint</h4>
-		        {complaintList}
-		    </div>
-		</div> 
+    return (		
+      <div className="panel panel-info">
+
+        <div className="panel-heading">Chief Complaint</div>
+
+        <div className="list-group"> {complaintList}</div>
+
+      </div>
+      		
     );
   }
 });

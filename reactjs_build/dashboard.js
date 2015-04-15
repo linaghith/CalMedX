@@ -84,9 +84,9 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
               React.createElement(CBNameHeader, {patientData: this.state.patientData})
           ), 
 
-          React.createElement("div", {className: "row"}, 
-                  React.createElement("div", {className: "col-lg-12"}, " ", React.createElement(CBComplaints, {complaints: this.state.complaintsdata.complaints}), " ")
-          ), 
+		React.createElement("div", {className: "col-lg-12"}, " ", React.createElement(CBComplaints, {complaints: this.state.complaintsdata.complaints}), " "), 
+		 
+		 React.createElement("div", {className: "col-lg-12 col-md-6"}, " ", React.createElement(CBPatientVisitSummaries, {patientVisitSummaries: this.state.patientvisitsummarydata.patientVisitSummaries}), " "), 
 
           React.createElement("div", {className: "row"}, 
             React.createElement("h4", {className: "current-vitals"}, "Current Vitals")
@@ -101,7 +101,9 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
           
           React.createElement("div", {className: "row"}, 
             React.createElement("h4", {className: "current-vitals"}, "Vitals History"), 
-             React.createElement("div", {className: "col-md-3 col-sm-6"}, " ", React.createElement(CBBloodPressuresHistory, {bloodPressuresHistory: this.state.data.bloodPressuresHistory}), " ")
+             React.createElement("div", {className: "col-md-3 col-sm-6"}, " ", React.createElement(CBBloodPressuresHistory, {bloodPressuresHistory: this.state.data.bloodPressuresHistory}), " "), 
+             React.createElement("div", {className: "col-md-3 col-sm-6"}), 
+             React.createElement("div", {className: "col-md-3 col-sm-6"}, " ", React.createElement(CBWeightHistory, {weightHistory: this.state.data.weightHistory}), " ")
           ), 
           
           React.createElement("div", {className: "row"}, 
@@ -121,7 +123,6 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
           ), 
    
           React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-lg-12 col-md-6"}, " ", React.createElement(CBPatientVisitSummaries, {patientVisitSummaries: this.state.patientvisitsummarydata.patientVisitSummaries}), " "), 
             React.createElement("div", {className: "col-lg-12 col-md-6"}, " ", React.createElement(CBPatientVisitHistories, {patientVisitHistories: this.state.patientvisithistorydata.patientVisitHistories}), " ")
           )
 

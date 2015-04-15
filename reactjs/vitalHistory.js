@@ -3,6 +3,7 @@ var CBBloodPressuresHistory = React.createClass({
   	return(
       <div className="chart-container">
 		<div id="placeholder" className="chart-placeholder"></div>
+		
 	  </div>
 	
   );
@@ -36,8 +37,8 @@ var CBBloodPressuresHistory = React.createClass({
 
   		
   		$.plot("#placeholder", [
-				{ data: systolic, label: "Blood Pressure Systolic" },
-				{ data: diastolic, label: "Blood Pressure Diastolic", yaxis: 2 }
+				{ data: systolic, label: "Systolic Blood Pressure " },
+				{ data: diastolic, label: "Diastolic Blood Pressure ", yaxis: 2 }
 			], {
 		xaxes: [ { mode: "time" } ],
 		yaxes: [ { min: 0 }, {
@@ -47,6 +48,7 @@ var CBBloodPressuresHistory = React.createClass({
 		} ],
 		legend: { position: "se" }
 	});
+	
   	}
 
 

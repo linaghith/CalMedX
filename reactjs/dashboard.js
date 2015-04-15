@@ -84,9 +84,9 @@ var CMDashboard = React.createClass({
               <CBNameHeader patientData={this.state.patientData} />
           </div>
 
-          <div className="row">
-                  <div className="col-lg-12"> <CBComplaints complaints={this.state.complaintsdata.complaints} /> </div>
-          </div>
+		<div className="col-lg-12"> <CBComplaints complaints={this.state.complaintsdata.complaints} /> </div>
+		 
+		 <div className="col-lg-12 col-md-6"> <CBPatientVisitSummaries patientVisitSummaries={this.state.patientvisitsummarydata.patientVisitSummaries} /> </div>
 
           <div className="row">
             <h4 className="current-vitals">Current Vitals</h4>
@@ -102,6 +102,8 @@ var CMDashboard = React.createClass({
           <div className="row">
             <h4 className="current-vitals">Vitals History</h4>
              <div className="col-md-3 col-sm-6"> <CBBloodPressuresHistory bloodPressuresHistory={this.state.data.bloodPressuresHistory} /> </div>
+             <div className="col-md-3 col-sm-6"></div>
+             <div className="col-md-3 col-sm-6"> <CBWeightHistory weightHistory={this.state.data.weightHistory} /> </div>
           </div>
           
           <div className="row">
@@ -121,7 +123,6 @@ var CMDashboard = React.createClass({
           </div>
    
           <div className="row">
-            <div className="col-lg-12 col-md-6"> <CBPatientVisitSummaries patientVisitSummaries={this.state.patientvisitsummarydata.patientVisitSummaries} /> </div>
             <div className="col-lg-12 col-md-6"> <CBPatientVisitHistories patientVisitHistories={this.state.patientvisithistorydata.patientVisitHistories} /> </div>
           </div>
 
