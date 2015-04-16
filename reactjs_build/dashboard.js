@@ -67,8 +67,8 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
       });
     }.bind(this));
 
-	//fetching condition data
-    var med_url = "fhir_proxy.php?json_url=baseDstu1/Conditions?subject=" + patient_id + "&_format=json";
+	  // fetching condition data
+    var med_url = "fhir_proxy.php?json_url=baseDstu1/Condition?subject=" + patient_id + "&_format=json";
     $.get(med_url, function(result) {
       var dat = JSON.parse(result);
       var entries = dat['entry'];
@@ -78,8 +78,8 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
         var entry = entries[i];
         var content = entry['content'];
         cond_data.push({
-          displayName: entry['code']['coding']['display'],
-		  onSetAge: entry['onsetAge']['value'] + " "+ entry['onsetAge']['unit']	
+          displayName: content['code']['coding'][0]['display'],
+          onSetAge: content['onsetAge']['value'] + " "+ content['onsetAge']['unit']	
         });
       }
       this.setState({
@@ -140,8 +140,8 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
           ), 
 
            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-lg-3 col-md-6"}, " ", React.createElement(CBLabTest, {labTests: this.state.labsdata.labTests}), " "), 
-              React.createElement("div", {className: "col-lg-3 col-md-6"}, " ", React.createElement(CBTherapies, {therapies: this.state.therapiesdata.therapies}), " ")
+              React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBLabTest, {labTests: this.state.labsdata.labTests}), " "), 
+              React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBTherapies, {therapies: this.state.therapiesdata.therapies}), " ")
           ), 
    
           React.createElement("div", {className: "row"}, 

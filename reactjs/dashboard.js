@@ -67,8 +67,8 @@ var CMDashboard = React.createClass({
       });
     }.bind(this));
 
-	//fetching condition data
-    var med_url = "fhir_proxy.php?json_url=baseDstu1/Conditions?subject=" + patient_id + "&_format=json";
+	  // fetching condition data
+    var med_url = "fhir_proxy.php?json_url=baseDstu1/Condition?subject=" + patient_id + "&_format=json";
     $.get(med_url, function(result) {
       var dat = JSON.parse(result);
       var entries = dat['entry'];
@@ -78,8 +78,8 @@ var CMDashboard = React.createClass({
         var entry = entries[i];
         var content = entry['content'];
         cond_data.push({
-          displayName: entry['code']['coding']['display'],
-		  onSetAge: entry['onsetAge']['value'] + " "+ entry['onsetAge']['unit']	
+          displayName: content['code']['coding'][0]['display'],
+          onSetAge: content['onsetAge']['value'] + " "+ content['onsetAge']['unit']	
         });
       }
       this.setState({
@@ -140,8 +140,8 @@ var CMDashboard = React.createClass({
           </div>
 
            <div className="row">
-              <div className="col-lg-3 col-md-6"> <CBLabTest labTests={this.state.labsdata.labTests} /> </div>
-              <div className="col-lg-3 col-md-6"> <CBTherapies therapies={this.state.therapiesdata.therapies} /> </div>
+              <div className="col-md-4"> <CBLabTest labTests={this.state.labsdata.labTests} /> </div>
+              <div className="col-md-4"> <CBTherapies therapies={this.state.therapiesdata.therapies} /> </div>
           </div>
    
           <div className="row">
