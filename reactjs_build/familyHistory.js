@@ -5,14 +5,16 @@ var CBFamilyHistories = React.createClass({displayName: "CBFamilyHistories",
     var familyHistoryList = this.props.familyHistories.map(function(familyHistory, index) {
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
-          React.createElement("dt", null, familyHistory.displayName)
+          React.createElement("dt", null, familyHistory.displayName), 
+		  React.createElement("dl", null, familyHistory.relationship), 
+		  React.createElement("dl", null, familyHistory.onsetAge)
         )
       );
     });
 
     return (
 
-      React.createElement("div", {className: "panel panel-success"}, 
+      React.createElement("div", {className: "panel panel-primary"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("small", null, "Family History")

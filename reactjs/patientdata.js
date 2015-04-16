@@ -7,26 +7,29 @@ var PATIENTSDATA = {
 			pid: '13123',
 			appointmentType: 'OPAC',
 			appointmentReason: 'Chief Complaint',
-			status: 'O'
+			status: 'O',
+			time: '8:00 AM'
 
 		},
 		{
-			displayName: 'Ursula Steindorff-Wehlmann',
+			displayName: 'Alexa Craft',
 			age: '41',
 			gender: 'Female',
 			pid: '13163',
 			appointmentType: 'OPAC',
 			appointmentReason: 'Ongoing Care',
-			status: 'O'
+			status: 'O',
+			time: '8:30 AM'
 		},
 		{
-			displayName: 'Balthasar Burghauser',
+			displayName: 'Ignacia Boyle',
 			age: '62',
 			gender: 'Female',
 			pid: '13159',
 			appointmentType: 'OPAC',
 			appointmentReason: 'Chief Complaint',
-			status: 'O'
+			status: 'O',
+			time: '9:00 AM'
 
 		},
     /* 

@@ -5,7 +5,7 @@ var CBConditions = React.createClass({displayName: "CBConditions",
     var conditionList = this.props.conditions.map(function(condition, index) {
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
-          React.createElement("dt", null, condition.displayName)
+          React.createElement("dt", null, condition.displayName, ": Onset Age: ", condition.onSetAge)
         )
       );
     });

@@ -5,14 +5,14 @@ var CBImmunizations = React.createClass({
     var immunizationList = this.props.immunizations.map(function(immunization, index) {
       return (
         <div key={index} className="list-group-item">
-          <dt>{immunization.displayName}</dt>
+          <dt>{immunization.displayName}: {immunization.date}: {immunization.cvx}</dt>
         </div>
       );
     });
 
     return (
 
-      <div className="panel panel-primary panel-success">
+      <div className="panel panel-danger">
 
         <div className="panel-heading">
           <small>Immunization</small>
