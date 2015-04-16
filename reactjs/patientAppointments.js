@@ -24,6 +24,7 @@ var CBPatientAppointments = React.createClass({
 		  <td>{patient.appointmentType}</td> 
 		  <td>{patient.appointmentReason}</td>
 		  <td>{patient.status}</td>
+		  <td>{patient.time}</td>
 		  </tr>
       );
     });
@@ -42,6 +43,7 @@ var CBPatientAppointments = React.createClass({
 							<th>Appointment Type</th>
 							<th>Appointment Reason</th>
 							<th>Status</th>
+							<th>Time</th>
 						</tr>
 					</thead>
 					<tbody>

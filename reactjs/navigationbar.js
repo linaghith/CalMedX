@@ -24,7 +24,7 @@ var CMNavigationBar = React.createClass({
       <nav className="navbar navbar-default navbar-static-top" role="navigation" style={topBarStyle}>
 
         <div className="navbar-header">
-          <a className="navbar-brand" href="appointments.html">eCalMedX-{n}</a>
+          <a className="navbar-brand" href="index.html">eCalMedX-{n}</a>
           
         </div>
 

@@ -1,13 +1,14 @@
 var FAMILYHISTORYDATA = {
   'familyHistories': [
 	{
-	 displayName: 'Diabetes'
+	 displayName: 'Diabetes',
+	 relationship: 'father, mother',
+	 onsetAge: '41 years'
 	},
 	{
-	 displayName: 'Glaucoma'
-	},
-	{
-	 displayName: "Tourette's"
+	 displayName: "Myocardial Infarction",
+	 relationship: 'father',
+	 onsetAge: 'none'
 	}
    ]	
 
