@@ -18,16 +18,13 @@ var CBAllergies = React.createClass({displayName: "CBAllergies",
    	var divid =index+ 'allergydiv';
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
-          React.createElement("dt", null, allergy.Allergen, "-", allergy.Severity_Description), 
-          React.createElement("dl", null, allergy.Reaction, 
+          React.createElement("dt", null, "Allergen: ", allergy.Allergen, ", Severity Description: ", allergy.Severity_Description), 
+          React.createElement("dl", null, React.createElement("b", null, "Reaction:"), " ", allergy.Reaction, 
  				React.createElement("span", {className: "linkClass", onClick: this.handleClick.bind(this,index), id: i}, "[+]")
  		  ), 
  				React.createElement("div", {id: divid, className: "nodisplay"}, 
-			          React.createElement("p", null, allergy.Onset_Date), 
-			          React.createElement("p", null, allergy.Allergy_Type), 
-			          React.createElement("p", null, allergy.Drug_Vocab), 
-			          React.createElement("p", null, allergy.Drug_Code), 
-			          React.createElement("p", null, allergy.Information_Source)
+			          React.createElement("p", null, React.createElement("b", null, "Onset Date:"), " ", allergy.Onset_Date, ", ", React.createElement("b", null, "Allergy Type:"), " ", allergy.Allergy_Type, ", ", React.createElement("b", null, "Drug Vocab:"), " ", allergy.Drug_Vocab, ", ", React.createElement("b", null, "Drug Code:"), " ", allergy.Drug_Code, ",",  
+			          React.createElement("b", null, "Information Source:"), " ", allergy.Information_Source)
 			    )
         )
         )},this
