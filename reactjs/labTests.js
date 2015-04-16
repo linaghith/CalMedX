@@ -45,10 +45,10 @@ var CBLabTest = React.createClass({
 
   
  return (
-      <div className="panel panel-default">
+      <div className="panel panel-danger">
 
         <div className="panel-heading">
-          Lab Results
+          <small>Lab Results</small>
         </div>
 
         <div className="list-group">{labTestList}

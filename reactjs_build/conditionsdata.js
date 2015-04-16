@@ -1,10 +1,10 @@
 var CONDITIONSDATA = {
   'conditions': [
-	{
-	 displayName: 'Diabetes'
-	},
-	{
-	 displayName: 'HyperTension'
-	}
+//	{
+//	 displayName: 'Diabetes'
+//	},
+//	{
+//	 displayName: 'HyperTension'
+//	}
    ]	
 };

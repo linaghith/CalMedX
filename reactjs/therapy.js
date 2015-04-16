@@ -1,25 +1,26 @@
-var CBConditions = React.createClass({
+var CBTherapies = React.createClass({
 
   render: function() {
 
-    var conditionList = this.props.conditions.map(function(condition, index) {
+    var therapyList = this.props.therapies.map(function(therapy, index) {
       return (
         <div key={index} className="list-group-item">
-          <dt>{condition.displayName}: Onset Age: {condition.onSetAge}</dt>
+          <dt>{therapy.displayName}:{therapy.date}</dt>
+          <dl>Result: {therapy.result}, Target Area: {therapy.targetArea}</dl>
         </div>
       );
     });
 
     return (
 
-      <div className="panel panel-warning">
+      <div className="panel panel-primary">
 
         <div className="panel-heading">
-          <small>Chronic Conditions</small>
+          <small>Therapy</small>
         </div>
 
         <div className="list-group">
-          {conditionList}
+          {therapyList}
         </div>
 
         <a href="#">

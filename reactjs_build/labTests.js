@@ -45,10 +45,10 @@ var CBLabTest = React.createClass({displayName: "CBLabTest",
 
   
  return (
-      React.createElement("div", {className: "panel panel-default"}, 
+      React.createElement("div", {className: "panel panel-danger"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          "Lab Results"
+          React.createElement("small", null, "Lab Results")
         ), 
 
         React.createElement("div", {className: "list-group"}, labTestList

@@ -23,7 +23,8 @@ var CBPatientAppointments = React.createClass({displayName: "CBPatientAppointmen
           React.createElement("td", null, React.createElement("a", {href: url}, patient.displayName)), 
 		  React.createElement("td", null, patient.appointmentType), 
 		  React.createElement("td", null, patient.appointmentReason), 
-		  React.createElement("td", null, patient.status)
+		  React.createElement("td", null, patient.status), 
+		  React.createElement("td", null, patient.time)
 		  )
       );
     });
@@ -41,7 +42,8 @@ var CBPatientAppointments = React.createClass({displayName: "CBPatientAppointmen
 							React.createElement("th", null, "Patient Name"), 
 							React.createElement("th", null, "Appointment Type"), 
 							React.createElement("th", null, "Appointment Reason"), 
-							React.createElement("th", null, "Status")
+							React.createElement("th", null, "Status"), 
+							React.createElement("th", null, "Time")
 						)
 					), 
 					React.createElement("tbody", null, 

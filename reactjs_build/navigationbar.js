@@ -24,7 +24,7 @@ var CMNavigationBar = React.createClass({displayName: "CMNavigationBar",
       React.createElement("nav", {className: "navbar navbar-default navbar-static-top", role: "navigation", style: topBarStyle}, 
 
         React.createElement("div", {className: "navbar-header"}, 
-          React.createElement("a", {className: "navbar-brand", href: "appointments.html"}, "eCalMedX-", n)
+          React.createElement("a", {className: "navbar-brand", href: "index.html"}, "eCalMedX-", n)
           
         ), 
 

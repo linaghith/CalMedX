@@ -6,13 +6,15 @@ var CBFamilyHistories = React.createClass({
       return (
         <div key={index} className="list-group-item">
           <dt>{familyHistory.displayName}</dt>
+		  <dl>{familyHistory.relationship}</dl>
+		  <dl>{familyHistory.onsetAge}</dl>
         </div>
       );
     });
 
     return (
 
-      <div className="panel panel-success">
+      <div className="panel panel-primary">
 
         <div className="panel-heading">
           <small>Family History</small>

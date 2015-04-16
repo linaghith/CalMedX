@@ -14,6 +14,7 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
       patientvisitsummarydata: PATIENTVISITSUMMARYDATA,
       patientvisithistorydata: PATIENTVISITHISTORYDATA,
       labsdata: LABSDATA,
+	  therapiesdata: THERAPIESDATA,
     };
   },
 
@@ -66,6 +67,26 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
       });
     }.bind(this));
 
+	  // fetching condition data
+    var med_url = "fhir_proxy.php?json_url=baseDstu1/Condition?subject=" + patient_id + "&_format=json";
+    $.get(med_url, function(result) {
+      var dat = JSON.parse(result);
+      var entries = dat['entry'];
+      cond_data = [];
+
+      for (var i = 0; i < entries.length; i++) {
+        var entry = entries[i];
+        var content = entry['content'];
+        cond_data.push({
+          displayName: content['code']['coding'][0]['display'],
+          onSetAge: content['onsetAge']['value'] + " "+ content['onsetAge']['units']	
+        });
+      }
+      this.setState({
+        conditionsdata: {'conditions': cond_data}
+      });
+    }.bind(this));
+
   },
 
   render: function() {
@@ -83,7 +104,7 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
           React.createElement("div", {className: "row name-header"}, 
               React.createElement(CBNameHeader, {patientData: this.state.patientData})
           ), 
-
+			
 		React.createElement("div", {className: "col-lg-12"}, " ", React.createElement(CBComplaints, {complaints: this.state.complaintsdata.complaints}), " "), 
 		 
 		 React.createElement("div", {className: "col-lg-12 col-md-6"}, " ", React.createElement(CBPatientVisitSummaries, {patientVisitSummaries: this.state.patientvisitsummarydata.patientVisitSummaries}), " "), 
@@ -119,7 +140,8 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
           ), 
 
            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-lg-3 col-md-6"}, " ", React.createElement(CBLabTest, {labTests: this.state.labsdata.labTests}), " ")
+              React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBLabTest, {labTests: this.state.labsdata.labTests}), " "), 
+              React.createElement("div", {className: "col-md-4"}, " ", React.createElement(CBTherapies, {therapies: this.state.therapiesdata.therapies}), " ")
           ), 
    
           React.createElement("div", {className: "row"}, 
