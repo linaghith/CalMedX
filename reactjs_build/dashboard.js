@@ -79,7 +79,7 @@ var CMDashboard = React.createClass({displayName: "CMDashboard",
         var content = entry['content'];
         cond_data.push({
           displayName: content['code']['coding'][0]['display'],
-          onSetAge: content['onsetAge']['value'] + " "+ content['onsetAge']['unit']	
+          onSetAge: content['onsetAge']['value'] + " "+ content['onsetAge']['units']	
         });
       }
       this.setState({
