@@ -45,7 +45,64 @@ var CMDashboard = React.createClass({
       });
     }.bind(this));
 
+	// fetching vitals and chief complaint 
+     var vital_url = "fhir_proxy.php?json_url=baseDstu1/Encounter?subject=" + patient_id + "&_format=json";
+     $.get(vital_url, function(result) {
 
+		//var result= '{"resourceType":"Bundle","entry":[{"reason":{"text":"patient presents with 5 weeks history of severe cough. pt also reports severe shortness of breath, severe fever. She is a 42 year old white f maid.she denies ever using cigarettes. describes drinking an average of 12 beers a week for about 4 years in her past. Respiration 16, Heart = RRR, Normal S1/S2, no murmurs, actively coughing with sputum production - dark yellow, Neck = no JVD a:Chronic Obstructive Pulmonary Disease p:performed E/M Level 3 (established patient) - Completed, and referred patient to pulmonary disease. o:Height: 170 cm--Weight: 95.25 kg--Temperature: 99.7 F--Pulse: 71--SystolicBP: 109--DiastolicBP: 67"}}]}';
+
+		var dat = JSON.parse(result);
+		var entries = dat['entry'][0];
+		var entry= entries['reason'];
+		var complaint_data = [];
+		var content = entry['text'];
+		var contentarray= new Array();
+		contentarray = content.split('--');
+		
+		var cheif_complient=contentarray[0];
+		
+		var vitals_data =[];
+		var helparray= new Array();
+
+		helparray=contentarray[1].split(':');
+		var bodyweight= helparray[1];
+		
+		helparray=contentarray[2].split(':');
+		var bodyTemperature = helparray[1];
+		
+		helparray=contentarray[3].split(':');
+		var heartRate = helparray[1];
+		
+		
+		helparray=contentarray[4].split(':');
+		var SystolicBP=helparray[1];
+		
+		helparray=contentarray[5].split(':');
+		var DiastolicBP=helparray[1];
+				
+		var blood_pressure = SystolicBP+ '/'+ DiastolicBP;
+		vitals_data.push({
+			bloodPressure: blood_pressure,
+			heartRate: heartRate,
+			bodyTemperature: bodyTemperature,
+			bodyWeight: bodyweight
+		});
+      
+		complaint_data.push({reason: cheif_complient});
+		
+     	this.setState({ 
+     			complaintsdata: { 'complaints' :complaint_data }
+     	});
+     	
+     	
+     	this.setState({ 
+     	  				data: {'vitals': vitals_data}
+     	 });
+     	
+    }.bind(this));	 
+
+
+	//--------------------------	 
     // fetching medicationsdata
     var med_url = "fhir_proxy.php?json_url=baseDstu1/MedicationPrescription?patient=" + patient_id + "&_format=json";
     $.get(med_url, function(result) {
@@ -92,7 +149,7 @@ var CMDashboard = React.createClass({
   render: function() {
   
     var wrapperStyle = {
-      minHeight: '419px'
+      minHeight: '609px'
     };
 
     return (
@@ -105,46 +162,47 @@ var CMDashboard = React.createClass({
               <CBNameHeader patientData={this.state.patientData} />
           </div>
 			
-		<div className="col-lg-12"> <CBComplaints complaints={this.state.complaintsdata.complaints} /> </div>
+		  <div className="col-lg-12"> <CBComplaints complaints={this.state.complaintsdata.complaints} /> </div>
 		 
-		 <div className="col-lg-12 col-md-6"> <CBPatientVisitSummaries patientVisitSummaries={this.state.patientvisitsummarydata.patientVisitSummaries} /> </div>
+		 <div className="col-lg-12"> <CBPatientVisitSummaries patientVisitSummaries={this.state.patientvisitsummarydata.patientVisitSummaries} /> </div>
 
-          <div className="row">
-            <h4 className="current-vitals">Current Vitals</h4>
+          <div className="row name-header">
+            <div className="col-md-6"><h4 className="current-vitals">Current Vitals</h4></div>
           </div>
 
-          <div className="row">
-              <div className="col-md-3 col-sm-6"> <CBBloodPressures bloodPressures={this.state.data.bloodPressures} /> </div>
-              <div className="col-md-3 col-sm-6"> <CBBodyTemperatures bodyTemperatures={this.state.data.bodyTemperatures} /> </div>
-              <div className="col-md-3 col-sm-6"> <CBBodyWeights bodyWeights={this.state.data.bodyWeights} /> </div>
-              <div className="col-md-3 col-sm-6"> <CBHeartRates heartRates={this.state.data.heartRates} /> </div>
+          <div className="row col-lg-12 col-md-6">
+              <div className="col-md-3 col-sm-6"> <CBBloodPressures bloodPressures={this.state.data.vitals} /> </div>
+              <div className="col-md-3 col-sm-6"> <CBBodyTemperatures bodyTemperatures={this.state.data.vitals} /> </div>
+              
+              <div className="col-md-3 col-sm-6"> <CBBodyWeights bodyWeights={this.state.data.vitals} /> </div>
+              <div className="col-md-3 col-sm-6"> <CBHeartRates heartRates={this.state.data.vitals} /> </div>
           </div>
           
-          <div className="row">
+          <div className="row col-lg-12">
             <h4 className="current-vitals">Vitals History</h4>
              <div className="col-md-3 col-sm-6"> <CBBloodPressuresHistory bloodPressuresHistory={this.state.data.bloodPressuresHistory} /> </div>
              <div className="col-md-3 col-sm-6"></div>
              <div className="col-md-3 col-sm-6"> <CBWeightHistory weightHistory={this.state.data.weightHistory} /> </div>
           </div>
           
-          <div className="row">
+          <div className="row col-lg-12 col-md-6">
               <div className="col-md-4"> <CBMedications medications={this.state.medicationsdata.medications} /> </div>
               <div className="col-md-4"> <CBAllergies allergies={this.state.allergiesdata.allergies} /> </div>
               <div className="col-md-4"> <CBConditions conditions={this.state.conditionsdata.conditions} /> </div>
           </div>
 
-          <div className="row">
+          <div className="row col-lg-12 col-md-6">
               <div className="col-md-4"> <CBProcedures procedures={this.state.proceduresdata.procedures} /> </div>
               <div className="col-md-4"> <CBImmunizations immunizations={this.state.immunizationsdata.immunizations} /> </div>
               <div className="col-md-4"> <CBFamilyHistories familyHistories={this.state.familyhistorydata.familyHistories} /> </div>
           </div>
 
-           <div className="row">
+           <div className="row col-lg-12 col-md-6">
               <div className="col-md-4"> <CBLabTest labTests={this.state.labsdata.labTests} /> </div>
               <div className="col-md-4"> <CBTherapies therapies={this.state.therapiesdata.therapies} /> </div>
           </div>
    
-          <div className="row">
+          <div className="row col-md-6">
             <div className="col-lg-12 col-md-6"> <CBPatientVisitHistories patientVisitHistories={this.state.patientvisithistorydata.patientVisitHistories} /> </div>
           </div>
 

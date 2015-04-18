@@ -6,6 +6,7 @@ var CBPatientVisitSummaries = React.createClass({
       return (
         <div key={index} className="list-group-item">
           <textarea className="form-control" rows="3">{patientVisitSummary.notes}</textarea>
+          
         </div>
       );
     });
@@ -15,7 +16,7 @@ var CBPatientVisitSummaries = React.createClass({
       <div className="panel panel-info">
 
         <div className="panel-heading">
-          Patient Visit Summary
+          Patient Visit Summary      <input type='button' value='Save' />
         </div>
 
         <div className="list-group">
