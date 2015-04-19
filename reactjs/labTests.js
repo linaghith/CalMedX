@@ -26,15 +26,15 @@ var CBLabTest = React.createClass({
          				<span className='linkClass' onClick={this.handleClick.bind(this,index)} id={i}>[+]</span>
          		  </dl>
          				<div id={divid} className='nodisplay'>
-						  	<p>CollectionMethod: {labTest.CollectionMethod}</p>
-						  	<p>clinic: {labTest.clinic}</p>
-						  	<p>OrderProviderName: {labTest.OrderProviderName}</p>
-						  	<p>OrderDate: {labTest.OrderDate}</p>
-						  	<p>DateColleted: {labTest.DateColleted}</p>
-						  	<p>DateResult: {labTest.DateResult}</p>
-						  	<p>LOINC: {labTest.Test_LOINC}</p>
-						  	<p>resultStatus: {labTest.resultStatus}</p>
-						  	<p>result: {labTest.result}</p>
+						  	<p><b>CollectionMethod:</b> {labTest.CollectionMethod}</p>
+						  	<p><b>clinic:</b> {labTest.clinic}</p>
+						  	<p><b>OrderProviderName:</b> {labTest.OrderProviderName}</p>
+						  	<p><b>OrderDate:</b> {labTest.OrderDate}</p>
+						  	<p><b>DateColleted:</b> {labTest.DateColleted}</p>
+						  	<p><b>DateResult:</b> {labTest.DateResult}</p>
+						  	<p><b>LOINC:</b> {labTest.Test_LOINC}</p>
+						  	<p><b>Result Status:</b> {labTest.resultStatus}</p>
+						  	<p><b>Result:</b> {labTest.result}</p>
          				</div>
 		         
 		        </div>

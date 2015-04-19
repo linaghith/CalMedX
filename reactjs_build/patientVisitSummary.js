@@ -6,6 +6,7 @@ var CBPatientVisitSummaries = React.createClass({displayName: "CBPatientVisitSum
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
           React.createElement("textarea", {className: "form-control", rows: "3"}, patientVisitSummary.notes)
+          
         )
       );
     });
@@ -15,7 +16,7 @@ var CBPatientVisitSummaries = React.createClass({displayName: "CBPatientVisitSum
       React.createElement("div", {className: "panel panel-info"}, 
 
         React.createElement("div", {className: "panel-heading"}, 
-          "Patient Visit Summary"
+          "Patient Visit Summary      ", React.createElement("input", {type: "button", value: "Save"})
         ), 
 
         React.createElement("div", {className: "list-group"}, 

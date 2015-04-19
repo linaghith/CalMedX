@@ -18,16 +18,13 @@ var CBAllergies = React.createClass({
    	var divid =index+ 'allergydiv';
       return (
         <div key={index} className="list-group-item">
-          <dt>{allergy.Allergen}-{allergy.Severity_Description}</dt>
-          <dl>{allergy.Reaction}
+          <dt>Allergen: {allergy.Allergen}, Severity Description: {allergy.Severity_Description}</dt>
+          <dl><b>Reaction:</b> {allergy.Reaction}
  				<span className='linkClass' onClick={this.handleClick.bind(this,index)} id={i}>[+]</span>
  		  </dl>
  				<div id={divid} className='nodisplay'>
-			          <p>{allergy.Onset_Date}</p>
-			          <p>{allergy.Allergy_Type}</p>
-			          <p>{allergy.Drug_Vocab}</p>
-			          <p>{allergy.Drug_Code}</p>
-			          <p>{allergy.Information_Source}</p>
+			          <p><b>Onset Date:</b> {allergy.Onset_Date}, <b>Allergy Type:</b> {allergy.Allergy_Type}, <b>Drug Vocab:</b> {allergy.Drug_Vocab}, <b>Drug Code:</b> {allergy.Drug_Code}, 
+			          <b>Information Source:</b> {allergy.Information_Source}</p>
 			    </div>      
         </div>
         )},this

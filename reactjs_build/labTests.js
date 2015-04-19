@@ -26,15 +26,15 @@ var CBLabTest = React.createClass({displayName: "CBLabTest",
          				React.createElement("span", {className: "linkClass", onClick: this.handleClick.bind(this,index), id: i}, "[+]")
          		  ), 
          				React.createElement("div", {id: divid, className: "nodisplay"}, 
-						  	React.createElement("p", null, "CollectionMethod: ", labTest.CollectionMethod), 
-						  	React.createElement("p", null, "clinic: ", labTest.clinic), 
-						  	React.createElement("p", null, "OrderProviderName: ", labTest.OrderProviderName), 
-						  	React.createElement("p", null, "OrderDate: ", labTest.OrderDate), 
-						  	React.createElement("p", null, "DateColleted: ", labTest.DateColleted), 
-						  	React.createElement("p", null, "DateResult: ", labTest.DateResult), 
-						  	React.createElement("p", null, "LOINC: ", labTest.Test_LOINC), 
-						  	React.createElement("p", null, "resultStatus: ", labTest.resultStatus), 
-						  	React.createElement("p", null, "result: ", labTest.result)
+						  	React.createElement("p", null, React.createElement("b", null, "CollectionMethod:"), " ", labTest.CollectionMethod), 
+						  	React.createElement("p", null, React.createElement("b", null, "clinic:"), " ", labTest.clinic), 
+						  	React.createElement("p", null, React.createElement("b", null, "OrderProviderName:"), " ", labTest.OrderProviderName), 
+						  	React.createElement("p", null, React.createElement("b", null, "OrderDate:"), " ", labTest.OrderDate), 
+						  	React.createElement("p", null, React.createElement("b", null, "DateColleted:"), " ", labTest.DateColleted), 
+						  	React.createElement("p", null, React.createElement("b", null, "DateResult:"), " ", labTest.DateResult), 
+						  	React.createElement("p", null, React.createElement("b", null, "LOINC:"), " ", labTest.Test_LOINC), 
+						  	React.createElement("p", null, React.createElement("b", null, "Result Status:"), " ", labTest.resultStatus), 
+						  	React.createElement("p", null, React.createElement("b", null, "Result:"), " ", labTest.result)
          				)
 		         
 		        )
