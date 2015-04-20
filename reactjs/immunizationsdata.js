@@ -2,12 +2,12 @@ var IMMUNIZATIONSDATA = {
   'immunizations': [
 	{
 	 displayName: 'FLURIX',
-	 date: '2005-10-07',
+	 date: 'Oct 07, 2005',
 	 cvx: '140'
 	},
 	{
 	 displayName: 'Tetanus and diphtheria toxoids adsorbed',
-	 date: '2009-06-17',
+	 date: 'Jun 17, 2009',
 	 cvx: '9'
 	}
    ]	

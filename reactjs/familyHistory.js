@@ -6,8 +6,8 @@ var CBFamilyHistories = React.createClass({
       return (
         <div key={index} className="list-group-item">
           <dt>{familyHistory.displayName}</dt>
-		  <dl>{familyHistory.relationship}</dl>
-		  <dl>{familyHistory.onsetAge}</dl>
+		  <dl>Relationship: {familyHistory.relationship}</dl>
+		  <dl>Onset Age: {familyHistory.onsetAge}</dl>
         </div>
       );
     });

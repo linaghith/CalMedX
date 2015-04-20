@@ -5,7 +5,9 @@ var CBImmunizations = React.createClass({displayName: "CBImmunizations",
     var immunizationList = this.props.immunizations.map(function(immunization, index) {
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
-          React.createElement("dt", null, immunization.displayName, ": ", immunization.date, ": ", immunization.cvx)
+          React.createElement("dt", null, immunization.displayName), 
+		  React.createElement("dl", null, immunization.date), 
+		  React.createElement("dl", null, "CVX: ", immunization.cvx)
         )
       );
     });

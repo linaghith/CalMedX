@@ -9,7 +9,7 @@ var CMAppointmentsNavi = React.createClass({displayName: "CMAppointmentsNavi",
       React.createElement("nav", {className: "navbar navbar-default navbar-static-top", role: "navigation", style: topBarStyle}, 
 
         React.createElement("div", {className: "navbar-header"}, 
-          React.createElement("a", {className: "navbar-brand", href: "appointments.html"}, "eCalMedX")
+          React.createElement("a", {className: "navbar-brand", href: "index.html"}, "eCalMedX")
         ), 
 
 
@@ -24,7 +24,7 @@ var CMAppointmentsNavi = React.createClass({displayName: "CMAppointmentsNavi",
                   React.createElement("li", null, React.createElement("a", {href: "#"}, React.createElement("i", {className: "fa fa-gear fa-fw"}), " Settings")
                   ), 
                   React.createElement("li", {className: "divider"}), 
-                  React.createElement("li", null, React.createElement("a", {href: "login.html"}, React.createElement("i", {className: "fa fa-sign-out fa-fw"}), " Logout")
+                  React.createElement("li", null, React.createElement("a", {href: "#"}, React.createElement("i", {className: "fa fa-sign-out fa-fw"}), " Logout")
                   )
               )
           )

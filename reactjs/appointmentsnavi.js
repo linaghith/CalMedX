@@ -9,7 +9,7 @@ var CMAppointmentsNavi = React.createClass({
       <nav className="navbar navbar-default navbar-static-top" role="navigation" style={topBarStyle}>
 
         <div className="navbar-header">
-          <a className="navbar-brand" href="appointments.html">eCalMedX</a>
+          <a className="navbar-brand" href="index.html">eCalMedX</a>
         </div>
 
 
@@ -24,7 +24,7 @@ var CMAppointmentsNavi = React.createClass({
                   <li><a href="#"><i className="fa fa-gear fa-fw"></i> Settings</a>
                   </li>
                   <li className="divider"></li>
-                  <li><a href="login.html"><i className="fa fa-sign-out fa-fw"></i> Logout</a>
+                  <li><a href="#"><i className="fa fa-sign-out fa-fw"></i> Logout</a>
                   </li>
               </ul>
           </li>

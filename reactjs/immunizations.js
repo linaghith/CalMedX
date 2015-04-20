@@ -5,7 +5,9 @@ var CBImmunizations = React.createClass({
     var immunizationList = this.props.immunizations.map(function(immunization, index) {
       return (
         <div key={index} className="list-group-item">
-          <dt>{immunization.displayName}: {immunization.date}: {immunization.cvx}</dt>
+          <dt>{immunization.displayName}</dt>
+		  <dl>{immunization.date}</dl>
+		  <dl>CVX: {immunization.cvx}</dl>
         </div>
       );
     });
