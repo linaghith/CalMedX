@@ -6,8 +6,8 @@ var CBFamilyHistories = React.createClass({displayName: "CBFamilyHistories",
       return (
         React.createElement("div", {key: index, className: "list-group-item"}, 
           React.createElement("dt", null, familyHistory.displayName), 
-		  React.createElement("dl", null, familyHistory.relationship), 
-		  React.createElement("dl", null, familyHistory.onsetAge)
+		  React.createElement("dl", null, "Relationship: ", familyHistory.relationship), 
+		  React.createElement("dl", null, "Onset Age: ", familyHistory.onsetAge)
         )
       );
     });

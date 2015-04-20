@@ -40,7 +40,7 @@ var CMNavigationBar = React.createClass({displayName: "CMNavigationBar",
                   React.createElement("li", null, React.createElement("a", {href: "#"}, React.createElement("i", {className: "fa fa-gear fa-fw"}), " Settings")
                   ), 
                   React.createElement("li", {className: "divider"}), 
-                  React.createElement("li", null, React.createElement("a", {href: "login.html"}, React.createElement("i", {className: "fa fa-sign-out fa-fw"}), " Logout")
+                  React.createElement("li", null, React.createElement("a", {href: "#"}, React.createElement("i", {className: "fa fa-sign-out fa-fw"}), " Logout")
                   )
               )
           )
