@@ -3,7 +3,7 @@ var PATIENTVISITSUMMARYDATA = {
 	 {
 	  reason: 'Chest pain',
 	  dateString: 'May 20, 2015',
-	  notes: 'Mild chest pain. Medications'
+	  notes: 'Mild chesvvvvvvvvvvvvvvvvt pain. Medications'
 	 },	
    ]
-}
+};

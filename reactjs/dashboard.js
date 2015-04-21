@@ -49,12 +49,13 @@ var CMDashboard = React.createClass({
      var vital_url = "fhir_proxy.php?json_url=baseDstu1/Encounter?subject=" + patient_id + "&_format=json";
 	  $.get(vital_url, function(result) {
 
-		//var result= '{ "entry":[  { "content":{  "reason":{ "text":"patient presents with 5 weeks history of severe cough. pt also reports severe shortness of breath, severe fever. She is a 42 year old white f maid.she denies ever using cigarettes. describes drinking an average of 12 beers a week for about 4 years in her past. Respiration 16, Heart = RRR, Normal S1/S2, no murmurs, actively coughing with sputum production - dark yellow, Neck = no JVD a:Chronic Obstructive Pulmonary Disease p:performed E/M Level 3 (established patient) - Completed, and referred patient to pulmonary disease. o:Height: 170 cm--Weight: 95.25 kg--Temperature: 99.7 F--Pulse: 71--SystolicBP: 109--DiastolicBP: 67"}}}]}';
+		var result= '{ "entry":[  { "content":{  "reason":{ "text":"patient presents with 5 weeks history of severe cough. pt also reports severe shortness of breath, severe fever. --She is a 42 year old white f maid.she denies ever using cigarettes. describes drinking an average of 12 beers a week for about 4 years in her past. Respiration 16, Heart = RRR, Normal S1/S2, no murmurs, actively coughing with sputum production - dark yellow, Neck = no JVD a:Chronic Obstructive Pulmonary Disease p:performed E/M Level 3 (established patient) - Completed, and referred patient to pulmonary disease. o:Height: 170 cm--Weight: 95.25 kg--Temperature: 99.7 F--Pulse: 71--SystolicBP: 1609--DiastolicBP: 67"}}}]}';
    
 		var dat = JSON.parse(result);
 		var entries = dat['entry'][0]['content'];
 		var entry= entries['reason'];
-		var complaint_data = [];
+		
+		
 		var content = entry['text'];
 		var contentarray= new Array();
 		contentarray = content.split('--');
@@ -64,20 +65,20 @@ var CMDashboard = React.createClass({
 		var vitals_data =[];
 		var helparray= new Array();
 
-		helparray=contentarray[1].split(':');
+		helparray=contentarray[2].split(':');
 		var bodyweight= helparray[1];
 		
-		helparray=contentarray[2].split(':');
+		helparray=contentarray[3].split(':');
 		var bodyTemperature = helparray[1];
 		
-		helparray=contentarray[3].split(':');
+		helparray=contentarray[4].split(':');
 		var heartRate = helparray[1];
 		
 		
-		helparray=contentarray[4].split(':');
+		helparray=contentarray[5].split(':');
 		var SystolicBP=helparray[1];
 		
-		helparray=contentarray[5].split(':');
+		helparray=contentarray[6].split(':');
 		var DiastolicBP=helparray[1];
 				
 		var blood_pressure = SystolicBP+ '/'+ DiastolicBP;
@@ -87,18 +88,31 @@ var CMDashboard = React.createClass({
 			bodyTemperature: bodyTemperature,
 			bodyWeight: bodyweight
 		});
-      
+      	
+       	this.setState({ 
+     	  				data: {'vitals': vitals_data}
+     	 });
+     	     	
+      	var complaint_data = [];
 		complaint_data.push({reason: cheif_complient});
-		
      	this.setState({ 
      			complaintsdata: { 'complaints' :complaint_data }
      	});
      	
+ 		
+ 		var visitsummarynotes_str = contentarray[1];
      	
-     	this.setState({ 
-     	  				data: {'vitals': vitals_data}
+     	var visitsummary_data = [];
+    
+     	visitsummary_data.push({
+          reason: '',
+          dateString: '',
+          notes: visitsummarynotes_str,
+        });
+ 		this.setState({ 
+     	  				patientvisitsummarydata: {'patientVisitSummaries' : visitsummary_data}
      	 });
-     	
+      
     }.bind(this));	 
 
 

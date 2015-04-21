@@ -3,7 +3,7 @@ var CBHeartRates = React.createClass({displayName: "CBHeartRates",
 
     var heartRate = this.props.heartRates.map(function(hrate, index) {
       return (
-        React.createElement("div", {className: "small"}, "Blood Pressure:", hrate.heartRate)
+        React.createElement("div", {className: "small"}, "Heart Rate:", hrate.heartRate)
       );
     });
 

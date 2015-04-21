@@ -3,7 +3,7 @@ var CBHeartRates = React.createClass({
 
     var heartRate = this.props.heartRates.map(function(hrate, index) {
       return (
-        <div className="small">Blood Pressure:{hrate.heartRate}</div>
+        <div className="small">Heart Rate:{hrate.heartRate}</div>
       );
     });
 

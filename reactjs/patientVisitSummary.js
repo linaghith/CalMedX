@@ -5,7 +5,7 @@ var CBPatientVisitSummaries = React.createClass({
     var patientVisitSummaryList = this.props.patientVisitSummaries.map(function(patientVisitSummary, index) {
       return (
         <div key={index} className="list-group-item">
-          <textarea className="form-control" rows="3">{patientVisitSummary.notes}</textarea>
+          {patientVisitSummary.notes}<textarea className="form-control" rows="3"></textarea>
           
         </div>
       );
